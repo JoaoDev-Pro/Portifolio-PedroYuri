@@ -873,9 +873,11 @@ ul {
 .lightbox-prev,
 .lightbox-next {
   position: fixed;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  /* Substituímos a transparência baixa por uma cor sólida ou mais opaca no mobile */
+  background: rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  /* Força o ícone a ser branco puro */
   cursor: pointer;
   border-radius: 50%;
   width: 48px;
@@ -883,21 +885,25 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-fast);
-  backdrop-filter: blur(4px);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Suporte para Safari iOS */
   z-index: 10001 !important;
   pointer-events: auto !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* Sombra para destacar do fundo */
 }
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .lightbox-close {
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 20px;
+  right: 20px;
 }
 
 .lightbox-prev {
@@ -912,11 +918,13 @@ ul {
   transform: translateY(-50%);
 }
 
+.lightbox-close svg,
 .lightbox-prev svg,
-.lightbox-next svg,
-.lightbox-close svg {
-  width: 22px;
-  height: 22px;
+.lightbox-next svg {
+  stroke: #ffffff !important;
+  fill: none;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  /* Sombra no próprio ícone */
 }
 
 /* ===== ATUAÇÃO ===== */
@@ -1780,11 +1788,15 @@ ul {
   .sobre-stats {
     grid-template-columns: 1fr 1fr;
   }
+
   .lightbox-prev {
-    left: 0.8rem !important;
+    left: 10px;
+    background: rgba(40, 40, 40, 0.6) !important;
   }
+
   .lightbox-next {
-    right: 0.8rem !important;
+    right: 10px;
+    background: rgba(40, 40, 40, 0.6) !important;
   }
 
   .lightbox-close,
@@ -1797,10 +1809,11 @@ ul {
   }
 
   .lightbox-close {
-    top: 1rem !important;
-    right: 1rem !important;
+    top: 15px;
+    right: 15px;
+    background: rgba(40, 40, 40, 0.6) !important;
   }
-  
+
 }
 
 /* Mobile Small */
