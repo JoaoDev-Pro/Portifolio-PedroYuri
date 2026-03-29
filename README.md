@@ -9,7 +9,7 @@ O projeto foi construído com foco em **design emocional**, **experiência do us
 ## 🌐 Preview
 
 🔗 Acesse o projeto:
-👉 https://seu-link-aqui.com
+👉 https://portifolio-pedro-yuri.vercel.app/
 
 ![Preview do Projeto](./img/preview.png)
 
