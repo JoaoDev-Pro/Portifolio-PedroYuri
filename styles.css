@@ -831,7 +831,7 @@ ul {
   position: fixed;
   inset: 0;
   background: rgba(10, 5, 20, 0.94);
-  z-index: 2000;
+  z-index: 9999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -850,6 +850,8 @@ ul {
   max-width: min(90vw, 860px);
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 9998;
 }
 
 #lightboxImg {
@@ -883,6 +885,8 @@ ul {
   justify-content: center;
   transition: var(--transition-fast);
   backdrop-filter: blur(4px);
+  z-index: 10001 !important;
+  pointer-events: auto !important;
 }
 
 .lightbox-close:hover,
@@ -1776,6 +1780,27 @@ ul {
   .sobre-stats {
     grid-template-columns: 1fr 1fr;
   }
+  .lightbox-prev {
+    left: 0.8rem !important;
+  }
+  .lightbox-next {
+    right: 0.8rem !important;
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-close {
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+  
 }
 
 /* Mobile Small */
